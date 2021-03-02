@@ -1,0 +1,10 @@
+@import "./variables.scss";
+
+@each $bp-name, $bp-pixels in $grid-breakpoints {
+    @media (min-width: $bp-pixels) {
+        //only works if the screen is wider than this
+        .text-#{$bp-name}-nowrap {
+            white-space: nowrap;
+        }
+    }
+}

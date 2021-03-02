@@ -1,0 +1,80 @@
+@import "./variables.scss";
+
+$box-model: (
+    "m": "margin",
+    "b": "border",
+    "p": "padding",
+);
+
+$edges: (
+    "l": "left",
+    "r": "right",
+    "b": "bottom",
+    "t": "top",
+    "x": none,
+    "y": none,
+);
+
+@each $num in (6, 7) {
+    .m-#{$num} {
+        //stands for point5
+        margin: map-get($spacing, $num) !important;
+    }
+
+    .p-#{$num} {
+        //stands for point5
+        padding: map-get($spacing, $num) !important;
+    }
+}
+
+/**
+Creates more classes like p-6 p-7 mx-7 ...
+*/
+@each $num in (6, 7) {
+    @each $edge, $edge-name in $edges {
+        @each $box, $box-name in $box-model {
+            @if $edge == "x" {
+                .#{$box}#{$edge}-#{$num} {
+                    //stands for point5
+                    #{"#{$box-name}-left"}: map-get($spacing, $num) !important;
+                    #{"#{$box-name}-right"}: map-get($spacing, $num) !important;
+                }
+            } @else if $edge == "y" {
+                .#{$box}#{$edge}-#{$num} {
+                    //stands for point5
+                    #{"#{$box-name}-top"}: map-get($spacing, $num) !important;
+                    #{"#{$box-name}-bottom"}: map-get($spacing, $num) !important;
+                }
+            } @else {
+                .#{$box}#{$edge}-#{$num} {
+                    //stands for point5
+                    #{"#{$box-name}-#{$edge-name}"}: map-get($spacing, $num) !important;
+                }
+            }
+        }
+    }
+}
+
+@each $bp-name, $bp-pixels in $grid-breakpoints {
+    //looping through xs, sm, md, lg, xl and their pixel values
+    @each $edge, $edge-name in $edges {
+        @each $box, $box-name in $box-model {
+            @each $space-name, $space-value in $spacing {
+                @media (min-width: $bp-pixels) {
+                    //only works if the screen is less wide than this
+                    .#{$box}#{$edge}-#{$bp-name}-#{$space-name} {
+                        @if $edge == "x" {
+                            #{"#{$box-name}-left"}: $space-value !important;
+                            #{"#{$box-name}-right"}: $space-value !important;
+                        } @else if $edge == "y" {
+                            #{"#{$box-name}-top"}: $space-value !important;
+                            #{"#{$box-name}-bottom"}: $space-value !important;
+                        } @else {
+                            #{"#{$box-name}-#{$edge-name}"}: $space-value !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

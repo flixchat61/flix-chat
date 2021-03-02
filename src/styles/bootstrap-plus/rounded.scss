@@ -1,0 +1,32 @@
+@import "./variables.scss";
+
+//rounded-1, rounded-2, rounded-1-top, rounded-1-bottom... //The bootstrap class "rounded" is equal to rounded-2
+//Border radius values are the same as bootstrap spacing values: 0.25rem, 0.5rem, 1rem, 1.5rem, 3rem
+@each $space-name, $space-value in $spacing {
+    .rounded-#{$space-name} {
+        border-radius: #{$space-value} !important;
+    }
+    .rounded-#{$space-name}-top {
+        border-radius: #{$space-value} #{$space-value} 0 0 !important;
+    }
+    .rounded-#{$space-name}-bottom {
+        border-radius: 0 0 #{$space-value} #{$space-value} !important;
+    }
+}
+
+//rounded-md-1, rounded-lg-2, rounded-md-1-top, rounded-lg-1-bottom...
+@each $bp-name, $bp-pixels in $grid-breakpoints {
+    @each $space-name, $space-value in $spacing {
+        @media (min-width: $bp-pixels) {
+            .rounded-#{$bp-name}-#{$space-name} {
+                border-radius: #{$space-value} !important;
+            }
+            .rounded-#{$bp-name}-#{$space-name}-top {
+                border-radius: #{$space-value} #{$space-value} 0 0 !important;
+            }
+            .rounded-#{$bp-name}-#{$space-name}-bottom {
+                border-radius: 0 0 #{$space-value} #{$space-value} !important;
+            }
+        }
+    }
+}

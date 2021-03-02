@@ -1,0 +1,25 @@
+@import "./variables.scss";
+
+.bg-gray1 {
+    background-color: map-get($map: $gray, $key: 1);
+}
+
+.bg-gray2 {
+    background-color: map-get($map: $gray, $key: 2);
+}
+
+.bg-gray3 {
+    background-color: map-get($map: $gray, $key: 3);
+}
+
+button.bg-gray3:hover {
+    background-color: map-get($map: $gray, $key: "3-dark");
+}
+
+.bg-gray4 {
+    background-color: map-get($map: $gray, $key: 4);
+}
+
+.bg-gray5 {
+    background-color: map-get($map: $gray, $key: 5);
+}

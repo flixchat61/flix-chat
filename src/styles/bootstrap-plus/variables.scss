@@ -1,0 +1,21 @@
+//TODO: Find a way to pull these from bootstrap itself, without importing all of bootstrap
+$transition-time: transform 0.1s ease-in-out 0s;
+$grow-scale: 1.03;
+$spacer: 1rem;
+$grid-gap: $spacer * 1.5;
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+);
+$spacing: (
+    1: $spacer * 0.25,
+    2: $spacer * 0.5,
+    3: $spacer,
+    4: $spacer * 1.5,
+    5: $spacer * 3,
+    6: $spacer * 6,
+    7: $spacer * 7,
+);

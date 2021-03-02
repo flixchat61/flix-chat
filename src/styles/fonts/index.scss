@@ -1,0 +1,71 @@
+@import "../bootstrap-plus/variables.scss";
+@import "./variables.scss";
+
+.font-default {
+    font-size: $default !important; //16px;
+}
+
+.font-tiny {
+    font-size: $tiny !important;
+}
+
+.font-smaller {
+    font-size: $smaller !important;
+}
+
+.font-small {
+    font-size: $small !important;
+}
+
+.font-low-normal {
+    font-size: $low-normal !important;
+}
+
+.font-title {
+    font-size: $title !important;
+}
+
+.font-big-title {
+    font-size: $big-title !important;
+}
+
+.font-huge-title {
+    font-size: $huge-title !important;
+}
+
+.font-28 {
+    font-size: $twenty-eight !important;
+}
+
+.font-30 {
+    font-size: $thirty !important;
+}
+
+.font-giant-title {
+    font-size: $giant-title !important;
+}
+
+.font-40 {
+    font-size: $fourty !important;
+}
+
+.font-50 {
+    font-size: $fifty !important;
+}
+
+.font-weight-bolder {
+    font-weight: 800;
+}
+
+.font-weight-boldest {
+    font-weight: 900;
+}
+
+@media (min-width: map-get($map: $grid-breakpoints, $key: "md")) {
+    .font-md-40 {
+        font-size: 2.5em !important;
+    }
+    .font-md-50 {
+        font-size: 3.125em !important;
+    }
+} ;

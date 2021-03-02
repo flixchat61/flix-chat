@@ -1,0 +1,28 @@
+//TODO: Add purgecss to the webpack file, otherwise, these imports(including bootstrap itself) will cause way to much css, and slow down the page load speed
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+@import "./bootstrapChanges.scss";
+@import "./marginPadding.scss";
+@import "./text.scss";
+@import "./position.scss";
+@import "./objectFit.scss";
+@import "./rounded.scss";
+@import "./outline.scss";
+@import "./zIndex.scss";
+@import "./scrollbar.scss";
+@import "./shadows.scss";
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.overflow-x-hidden {
+    overflow-x: hidden;
+}
+
+.text-decoration-underline {
+    text-decoration: underline;
+}
+
+.no-scroll {
+    overflow: hidden;
+}

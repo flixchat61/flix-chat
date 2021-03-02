@@ -1,0 +1,101 @@
+//TODO: Set these variables by importing form json/colors.js instead of declaring them twice
+
+$colorScheme: (
+  "orange": #fc4c02,
+  "yellow": #f1b434,
+  "pink": #ffa38b,
+  "teal": #b9dcd2,
+  "corn": #f2edd7,
+  "blue": #004976,
+  "charcoal": #414042,
+  //! Start using the below key, value pairs from here on. The ones above have been kept to not break code, but will be switched eventually.
+  "primary": #fc4c02,
+  "primary-dark": #c93d02,
+  "secondary": #f1b434,
+  "warning": #ffa38b,
+  "success": #b9dcd2,
+  "light": #f2edd7,
+  "info": #004976,
+  "dark": #414042,
+  "dark-dark": #2e2d2f,
+  "paleRed": #ffb1bb,
+);
+
+$invalid: rgba(255, 0, 0, 0.5);
+$overlay: rgba(0, 0, 0, 0.3);
+
+$gray: (
+  1: #fafafa,
+  2: #f6f6f6,
+  "2-dark": #dbdbdb,
+  3: #b1b1b1,
+  "3-dark": #969696,
+  4: #707070,
+  5: #b5b5b5,
+);
+
+$link: (
+  "default": #0064bd,
+  "visited": #0077cc,
+);
+
+$socialMedia: (
+  "facebook": #3b5998,
+  "messenger": #0084ff,
+  "whatsapp": #25d366,
+  "instagram": #e1306c,
+  "twitter": #1da1f2,
+  "pinterest": #e60023,
+  "linkedIn": #1666c5,
+  "snapChat": #fffc00,
+  "youtube": #ff0000,
+);
+
+$cars: (
+  "maroon": #800000,
+  "brown": #8b4513,
+  "yellow": #f8d25a,
+  "red": #f04941,
+  "blue": #009ee0,
+  "gold": #d2ad3c,
+  "bronze": #ab6a43,
+  "green": #67a635,
+  "silver": #c0c0c0,
+  "orange": #f19338,
+  "tan": #d2b48c,
+  "white": #ffffff,
+  "grey": #808080,
+  "black": #000000,
+  "purple": #800080,
+  "copper": #b87333,
+);
+
+$primary: map-get(
+  $map: $colorScheme,
+  $key: "primary",
+);
+$secondary: map-get(
+  $map: $colorScheme,
+  $key: "secondary",
+);
+$success: map-get(
+  $map: $colorScheme,
+  $key: "success",
+);
+$warning: map-get(
+  $map: $colorScheme,
+  $key: "warning",
+);
+$info: map-get(
+  $map: $colorScheme,
+  $key: "info",
+);
+$light: map-get(
+  $map: $colorScheme,
+  $key: "light",
+);
+$dark: map-get(
+  $map: $colorScheme,
+  $key: "dark",
+);
+//These three colors match original bootstrap colors $muted $danger $white

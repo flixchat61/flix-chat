@@ -1,0 +1,14 @@
+@import "./variables.scss";
+
+$positions: "relative", "absolute", "sticky", "fixed";
+
+@each $bp-name, $bp-pixels in $grid-breakpoints {
+    @each $position in $positions {
+        @media (min-width: $bp-pixels+1) {
+            //only works if the screen is wider than this
+            .position-#{$bp-name}-#{$position} {
+                position: #{$position};
+            }
+        }
+    }
+}

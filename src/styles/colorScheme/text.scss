@@ -1,0 +1,29 @@
+@import "./variables.scss";
+
+.invalid {
+    color: $invalid;
+}
+
+.text-black {
+    color: black;
+}
+
+.text-gray1 {
+    color: map-get($map: $gray, $key: 1);
+}
+
+.text-gray2 {
+    color: map-get($map: $gray, $key: 2);
+}
+
+.text-gray3 {
+    color: map-get($map: $gray, $key: 3);
+}
+
+.text-gray4 {
+    color: map-get($map: $gray, $key: 4);
+}
+
+.text-gray5 {
+    color: map-get($map: $gray, $key: 5);
+}

@@ -1,0 +1,44 @@
+.hover-grow,
+.hover-grow-only-shadow {
+    @extend .shadow-2;
+}
+
+.hover-grow:hover,
+.hover-grow-only-shadow:hover {
+    box-shadow: 0 9px 23px rgba(0, 0, 0, 0.15), 0 5px 5px rgba(0, 0, 0, 0.22);
+}
+
+.hover-grow,
+.hover-grow-no-shadow {
+    transition: $transition-time;
+}
+
+.hover-grow:hover,
+.hover-grow-no-shadow:hover {
+    transform: scale($grow-scale);
+}
+
+.hover-text-primary:hover {
+    color: map-get($map: $colorScheme, $key: "primary") !important;
+}
+
+button.text-primary:hover {
+    color: map-get($map: $colorScheme, $key: "primary-dark") !important;
+}
+
+button.bg-gray2:hover {
+    background-color: map-get($map: $gray, $key: "2-dark") !important;
+}
+
+button.bg-gray3:active {
+    background-color: map-get($map: $gray, $key: "3-dark") !important;
+}
+
+// button.text-dark:hover,
+.darker-dark-on-hover:hover {
+    color: map-get($map: $colorScheme, $key: "dark-dark") !important;
+}
+
+.darker-primary-on-hover:hover {
+    color: map-get($map: $colorScheme, $key: "primary-dark") !important;
+}

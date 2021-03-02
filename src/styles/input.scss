@@ -1,0 +1,17 @@
+$padding-x: 0.75em;
+$padding-y: 0.375em;
+$height: 54px;
+
+.input,
+.input-height {
+    height: $height;
+}
+
+.input,
+.input-padding {
+    padding: $padding-y $padding-x;
+}
+
+.color-button {
+    padding: $padding-y $padding-x 0 $padding-x;
+}

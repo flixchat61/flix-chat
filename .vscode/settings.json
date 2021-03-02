@@ -1,0 +1,45 @@
+{
+    "files.exclude": {
+        // ".gitignore": true,
+        "dist": true,
+        // "README.md": true,
+        // "package-lock.json": true,
+        // "src/entryPoints": true,
+        "node_modules": true,
+        // "package.json": true,
+        // "netlify.toml": true,
+        // // "postcss.config.js": true,
+        // // ".babelrc": true,
+        // // "build-config": true,
+        // "README.md": true,
+        // // "html": true,
+        // "debug.log": true,
+        // "jsconfig.json": true
+    },
+    "search.exclude": {
+        // "/node_modules": false,
+        "dist": true
+    },
+    "better-comments.multilineComments": true,
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+    "terminal.integrated.shellArgs.windows": [
+        "/K",
+        "C:\\softwares\\cmder\\vendor\\init.bat"
+    ],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    // "editor.fontFamily": "Fira Code",
+    "editor.formatOnSave": true,
+    "editor.fomatOnPaste": true,
+    "editor.fontLigatures": true,
+    "typescript.suggest.paths": false,
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "data/*.json",
+            ],
+            "url": "./data.schema.json"
+        }
+    ]
+}

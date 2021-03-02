@@ -1,0 +1,20 @@
+@import "./colorScheme/variables.scss"; //! Must be before @import "./bootstrap-plus/index"
+@import "./bootstrap-plus/index.scss";
+@import "./colorScheme/index.scss";
+@import "./flexboxClasses.scss";
+@import "./fonts/index.scss";
+@import "./select.scss";
+@import "./input.scss";
+@import "./hoverEffects.scss";
+@import "./createReactApp.scss"; //! You can remove this import
+
+#root {
+  overflow: unset !important;
+}
+
+body {
+  font-family: $default-font;
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0px!important;
+}
