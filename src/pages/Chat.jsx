@@ -22,7 +22,6 @@ const siteMetadata = new SiteMetadata(
 
 
 function Chat() {
-    console.log('sdfvsd');
     let history = useHistory();
     const cookies = new Cookies();
     if (cookies.get('userToken') === undefined) {
