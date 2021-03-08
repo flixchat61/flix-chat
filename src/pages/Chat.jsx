@@ -22,6 +22,7 @@ const siteMetadata = new SiteMetadata(
 
 
 function Chat() {
+    console.log('sdfvsd');
     let history = useHistory();
     const cookies = new Cookies();
     if (cookies.get('userToken') === undefined) {
@@ -38,6 +39,7 @@ function Chat() {
     let [toPeople, setToPeople] = useState("");
     let [toPeopleName, setToPeopleName] = useState("");
     let [sentmsgToaddress, setSentmsgToaddress] = useState("");
+    let [iddd, setIddd] = useState("");
     let [msg, setMsg] = useState('');
     if (!firebase.apps.length) {
         firebase.initializeApp(config);
@@ -95,6 +97,8 @@ function Chat() {
                 }
             })
         let chatId = "chats/" + number + "-" + key
+        let iddis = number + "-" + key;
+        setIddd(iddis);
         firebase
             .database()
             .ref(
@@ -103,6 +107,7 @@ function Chat() {
             )
             .on("value", snapshot => {
                 setSentmsgToaddress(chatId);
+                setIddd(iddis);
                 if (snapshot && snapshot.exists()) {
                     setCurrentChats(snapshot.val());
                 }
@@ -115,6 +120,7 @@ function Chat() {
                         )
                         .on("value", snapshot => {
                             setSentmsgToaddress('chats/' + key + "-" + number);
+                            setIddd(iddis);
                             if (snapshot && snapshot.exists()) {
                                 setCurrentChats(snapshot.val());
                             }
@@ -195,13 +201,15 @@ function Chat() {
     )
 
     const SendMessage = () => {
-        firebase.database().ref(sentmsgToaddress).push().set({
+        const msgSent = firebase.database().ref(sentmsgToaddress).push();
+        const key = msgSent.key;
+        msgSent.set({
             attachmentType: "6",
             body: msg,
-            chatId: sentmsgToaddress,
+            chatId: iddd,
             dateTimeStamp: new Date().getTime(),
             delivered: true,
-            id: '',
+            id: key,
             recipentId: recipentInfo.id,
             recipientImage: recipentInfo.image,
             recipientName: recipentInfo.name,
@@ -212,12 +220,14 @@ function Chat() {
             senderName: senderInfo.name,
             senderStatus: senderInfo.status,
             sent: true,
+            seen: true,
             timeDiff: "0 second ago"
 
         }, (error) => {
             if (error) {
                 console.log(error.message);
             } else {
+                console.log(firebase.database().ref(sentmsgToaddress).push().key)
                 // Success
             }
         });
