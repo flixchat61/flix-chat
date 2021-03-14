@@ -199,21 +199,22 @@ function Chat() {
         </div>
     )
 
-    const SendMessage = () => {
+      const SendMessage = () => {
         const msgSent = firebase.database().ref(sentmsgToaddress).push();
         const key = msgSent.key;
+        const timeStamp = (new Date().getTime()).toString();
         msgSent.set({
-            attachmentType: "6",
+            attachmentType: 6,
             body: msg,
             chatId: iddd,
-            dateTimeStamp: new Date().getTime(),
+            dateTimeStamp: timeStamp,
             delivered: true,
             id: key,
             recipentId: recipentInfo.id,
             recipientImage: recipentInfo.image,
             recipientName: recipentInfo.name,
             recipientStatus: recipentInfo.status,
-            selected: "false",
+            selected: false,
             senderId: senderInfo.id,
             senderImage: senderInfo.image,
             senderName: senderInfo.name,
